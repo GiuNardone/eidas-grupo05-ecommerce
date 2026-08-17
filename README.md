@@ -13,7 +13,20 @@ Ver [integrantes.md](integrantes.md)
 
 El sistema consiste en una plataforma de comercio electrónico diseñada para la tienda de indumentaria deportiva y casual Mundo Sport. El objetivo principal es automatizar los procesos internos de gestión de pedidos, control de inventario, seguimiento de ventas y administración de devoluciones, así como ampliar el alcance comercial del negocio mediante un canal de ventas online disponible las 24 horas.
 
-Esta plataforma permitirá a los clientes visualizar un catálogo de productos organizado por categorías, consultar tablas de medidas por prenda, gestionar un carrito de compras persistente, procesar pagos en línea a través de una pasarela externa certificada, seleccionar métodos de despacho (retiro presencial o envío postal con cálculo automático de costos), y realizar seguimiento de sus envíos. Además, el sistema contará con un panel administrativo con roles diferenciados para el dueño y la empleada, que permitirá gestionar el stock, emitir facturas, configurar promociones, generar reportes de ventas y tramitar devoluciones o cambios.
+#### Alcance del sistema:
+El sistema permitirá:
+- Visualizar productos ordenados por categorías.
+- Destacar ofertas en una sección específica.
+- Mostrar tabla interactivas de medidas por prenda para reducir devoluciones.
+- Seleccionar artículos para compra con carrito persistente.
+- Procesar pagos en línea de forma segura mediante una pasarela externa certificada (tarjetas de crédito, débito y transferencias bancarias).
+- Seleccionar el método de despacho (retiro presencial en sucursal o envío postal con cálculo automático de costos).
+- Ofrecer un sistema de tracking para que el cliente siga su envío.
+- Automatizar el control de inventario.
+- Emitir facturas.
+- Gestionar alertas por bajo stock.
+- Tramitar devoluciones y cambios.
+
 
 ## Caso de estudio
 
