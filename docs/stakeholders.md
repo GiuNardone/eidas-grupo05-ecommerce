@@ -63,19 +63,13 @@ se degrada.
 
 
 
----
-
-## [Nombre del stakeholder]
-
-**Tipo:** Interno / Externo / Sistema externo  
-**Por qué es clave:** _Justificación._
-
----
 
 ## Tabla resumen
 
 | Stakeholder | Tipo | Nivel de impacto |
 |-------------|------|-----------------|
-| | | Alto / Medio / Bajo |
-| | | Alto / Medio / Bajo |
-| | | Alto / Medio / Bajo |
+|Dueño del negocio | Interno | Alto |
+| Cliente final | Externo | Alto |
+| Empleada del comercio | Interno | Alto |
+| Pasarela de pago electronico | Sistema externo | Alto |
+| Proveedor logistico | Sistema externo | Medio |
