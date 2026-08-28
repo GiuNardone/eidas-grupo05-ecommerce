@@ -198,14 +198,16 @@ _Agrupar por módulo o área funcional._
 
 ## Requisitos no funcionales
 
+## Requisitos no funcionales
+
 ### Rendimiento y disponibilidad
 
-| ID | Requisito |
-|----|-----------|
-| RNF-01 | |
+| ID     | Requisito                                                                                                                                                                          |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF-01 | El sistema deberá procesar la creación de un usuario interno y mostrar el resultado de la operación en un tiempo máximo de 3 segundos bajo condiciones normales de funcionamiento. |
 
 ### Seguridad y usabilidad
 
-| ID | Requisito |
-|----|-----------|
-| RNF-02 | |
+| ID     | Requisito                                                                                                                                                                             |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF-02 | El sistema deberá garantizar que la creación de usuarios internos sea realizada únicamente por usuarios con rol Administrador y que las contraseñas sean almacenadas de forma segura. |
