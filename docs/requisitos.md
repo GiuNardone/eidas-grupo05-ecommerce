@@ -222,6 +222,20 @@ _Agrupar por módulo o área funcional._
 
 
 
+### Módulo 14 — Panel de Administración
+
+| ID | Requisito |
+|----|-----------|
+| RF-142 | El sistema deberá poseer un panel de administración que mostrará un dashboard con indicadores clave de actividad de la tienda. |
+| RF-143 | El dashboard mostrará el número de clientes nuevos registrados en los últimos 7 días. |
+| RF-144 | El dashboard mostrará el número de clientes recurrentes (con más de una compra). |
+| RF-145 | El dashboard mostrará el total de ventas del día actual. |
+| RF-146 | El dashboard mostrará el total de ventas de la semana actual. |
+| RF-147 | El dashboard mostrará el total de ventas del mes actual. |
+| RF-148 | El dashboard mostrará el número de pedidos pendientes de preparación. |
+| RF-149 | El dashboard mostrará el número de pedidos pendientes de envío. |
+| RF-150 | El dashboard mostrará el número de solicitudes de devolución pendientes de revisión. |
+
 
 
 ### Módulo 2 — [Nombre]
@@ -229,6 +243,10 @@ _Agrupar por módulo o área funcional._
 | ID | Requisito |
 |----|-----------|
 | RF-03 | |
+
+
+
+
 
 ## Requisitos no funcionales
 
