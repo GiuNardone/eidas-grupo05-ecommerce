@@ -78,17 +78,22 @@ _Agrupar por módulo o área funcional._
 | RF-48 | El sistema permitirá al rol Depósito consultar el stock disponible de cualquier variante.|
 | RF-49 | El sistema permitirá al rol Depósito actualizar el stock (ingresos, egresos)|
 
+### Módulo 5 — Carrito de Compras
+
+| ID | Requisito |
+|----|-----------|
+| RF-50 | El sistema exigirá que el cliente seleccione talle y color antes de agregar un producto al carrito.|
+| RF-51 | El sistema permitirá agregar productos al carrito de compras.|
+| RF-52 |El sistema permitirá visualizar los productos agregados al carrito con detalle de variante, cantidad y precio unitario |
+| RF-53 | El sistema permitirá modificar la cantidad de cada producto en el carrito.|
+| RF-54 | El sistema permitirá eliminar productos del carrito de forma individual.|
+| RF-55 |El sistema permitirá vaciar completamente el carrito en un solo paso. |
+| RF-56 | El sistema verificará nuevamente la disponibilidad de stock de cada variante antes de confirmar el pedido.|
+| RF-57 |El sistema mostrará el resumen completo del pedido con productos, variantes, cantidades, subtotal, costo de envío y total final. |
+| RF-58 |El sistema reservará los productos agregados al carrito durante un período de 24 horas |
+| RF-59 | El sistema liberará automáticamente los productos reservados y vaciará el carrito si transcurren más de 24 horas sin finalizar la compra.|
 
 
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
 | RF- | |
 | RF- | |
 | RF- | |
