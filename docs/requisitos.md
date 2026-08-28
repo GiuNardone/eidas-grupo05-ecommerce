@@ -35,10 +35,18 @@ _Agrupar por módulo o área funcional._
 | RF-16 |El sistema permitirá al cliente consultar su historial de compras desde "Mi Cuenta". |
 | RF-17 | El sistema permitirá al cliente consultar el estado actualizado de sus pedidos desde "Mi Cuenta".|
 | RF-18 | El sistema permitirá al cliente solicitar devoluciones desde "Mi Cuenta" para pedidos que cumplan los plazos establecidos.|
+| RF-19 | El sistema permitirá al personal autorizado (Ventas y Administrador) consultar el listado completo de clientes registrados con sus datos.|
+| RF- |El sistema permitirá al personal autorizado (Ventas y Administrador) buscar clientes por nombre, email o DNI. |
+| RF- | El sistema permitirá que los clientes que hayan comprado un producto puedan calificarlo con una puntuación de 1 a 5 estrellas y un comentario opcional.|
+| RF- |El sistema permitirá al Administrador eliminar reseñas de clientes que contengan lenguaje inapropiado |
+| RF- | El sistema registrará la fecha y hora del registro de cada cliente.|
 
-| RF- | |
-| RF- | |
-| RF- | |
+
+### Módulo 3 — Catalogo y Productos
+
+| ID | Requisito |
+|----|-----------|
+
 | RF- | |
 | RF- | |
 | RF- | |
