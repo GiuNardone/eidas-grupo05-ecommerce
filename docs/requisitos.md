@@ -135,6 +135,27 @@ _Agrupar por módulo o área funcional._
 | RF-88 | El sistema permitirá al cliente consultar el número de seguimiento de su envío desde "Mi Cuenta". |
 
 
+### Módulo 8 — Devoluciones y Cambios
+
+| ID | Requisito |
+|----|-----------|
+| RF-89 | El sistema permitirá al cliente solicitar una devolución desde la sección "Mi Cuenta". |
+| RF-90 | El sistema permitirá al cliente seleccionar el pedido asociado a la devolución entre sus pedidos finalizados. |
+| RF-91 | El sistema permitirá al cliente indicar el motivo de la devolución. |
+| RF-92 | El sistema contemplará los siguientes motivos de devolución: talle incorrecto, producto defectuoso y producto equivocado. |
+| RF-93 | El sistema permitirá al cliente agregar comentarios adicionales y fotografías adjuntas a la solicitud de devolución. |
+| RF-94 | El sistema validará que la solicitud de devolución se realice dentro de los 5 días hábiles posteriores a la fecha de entrega o retiro del pedido. |
+| RF-95 | El sistema impedirá solicitar devoluciones fuera del plazo establecido. |
+| RF-96 | El sistema gestionará los siguientes estados de devolución: "Solicitada", "En revisión", "Aprobada", "Rechazada" y "Finalizada". |
+| RF-97 | El sistema informará al cliente que la resolución consistirá en un cambio de producto o en la generación de una nota de crédito. |
+| RF-98 | El sistema permitirá al rol Ventas visualizar, revisar y resolver las solicitudes de devolución. |
+| RF-99 | El sistema notificará al cliente por email y en su cuenta cada cambio de estado de su solicitud de devolución. |
+| RF-100 | El sistema registrará la fecha y hora de cada cambio de estado de la devolución. |
+| RF-101 | El sistema generará una nota de crédito automática cuando una devolución sea aprobada y no se realice cambio. |
+| RF-102 | El sistema registrará el ingreso al stock de los productos devueltos cuando la devolución sea aprobada. |
+
+
+
 | RF- | |
 | RF- | |
 | RF- | |
