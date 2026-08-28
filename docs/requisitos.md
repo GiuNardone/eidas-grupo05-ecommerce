@@ -119,6 +119,21 @@ _Agrupar por módulo o área funcional._
 | RF-78 | El sistema registrará la fecha y hora de cada cambio de estado del pedido.|
 
 
+### Módulo 7 — Envíos y Retiros
+
+| ID | Requisito |
+|----|-----------|
+| RF-79 | El sistema procesará los pedidos según el método de entrega seleccionado por el cliente. |
+| RF-80 | El sistema permitirá al cliente seleccionar entre envío a domicilio y retiro en el local durante el checkout. |
+| RF-81 | El sistema se integrará con el proveedor logístico para obtener automáticamente el número de seguimiento del envío. |
+| RF-82 | El sistema permitirá al rol Logística registrar la empresa de envío utilizada. |
+| RF-83 | El sistema permitirá al empleado del local confirmar en el sistema que el cliente retiró su pedido. |
+| RF-84 | El sistema registrará la fecha y hora de retiro confirmado. |
+| RF-85 | El sistema contemplará un plazo máximo de 15 días corridos para que el cliente retire el pedido en el local. |
+| RF-86 | El sistema notificará al cliente 3 días antes del vencimiento del plazo de retiro (día 12). |
+| RF-87 | El sistema notificará al cliente el día de vencimiento del plazo de retiro (día 15). |
+| RF-88 | El sistema permitirá al cliente consultar el número de seguimiento de su envío desde "Mi Cuenta". |
+
 
 | RF- | |
 | RF- | |
