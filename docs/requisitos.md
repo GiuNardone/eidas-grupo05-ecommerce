@@ -176,6 +176,9 @@ _Agrupar por módulo o área funcional._
 | RF-117 | El sistema impedirá la aplicación de cupones vencidos o sin usos disponibles. |
 | RF-118 | El sistema permitirá que un cliente aplique un solo cupón por pedido. |
 
+
+
+
 ### Módulo 10 — Proveedores
 
 | ID | Requisito |
@@ -190,6 +193,15 @@ _Agrupar por módulo o área funcional._
 | RF-126 | El sistema permitirá al Administrador consultar el historial de ingresos de mercadería por proveedor. |
 
 
+
+### Módulo 11 — Notificaciones
+
+| ID | Requisito |
+|----|-----------|
+| RF-127 | El sistema enviará notificaciones por email para: confirmación de registro, recuperación de contraseña, confirmación de pedido, cambio de estado de pedido, alerta de bajo stock y resolución de devolución|
+| RF-128 | El sistema mostrará notificaciones en el panel del cliente para: cambio de estado de pedido, recordatorio de retiro y resolución de devolución. |
+| RF-129 | El sistema mostrará notificaciones en el panel del empleado para: alertas de bajo stock y nuevas solicitudes de devolución.|
+| RF-130 | El sistema registrará el envío de cada notificación con fecha y hora. |
 
 | RF- | |
 | RF- | |
