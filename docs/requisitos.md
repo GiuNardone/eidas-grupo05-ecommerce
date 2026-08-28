@@ -232,13 +232,12 @@ _Agrupar por módulo o área funcional._
 
 ## Requisitos no funcionales
 
-## Requisitos no funcionales
-
 ### Rendimiento y disponibilidad
 
 | ID     | Requisito                                                                                                                                                                          |
 | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | RNF-01 | El sistema deberá procesar la creación de un usuario interno y mostrar el resultado de la operación en un tiempo máximo de 3 segundos bajo condiciones normales de funcionamiento. |
+| RNF-02| El sistema deberá soportar al menos 100 solicitudes simultáneas sin degradar significativamente su funcionamiento.|
 
 ### Seguridad y usabilidad
 
