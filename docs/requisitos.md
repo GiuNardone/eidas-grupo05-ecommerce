@@ -252,13 +252,14 @@ _Agrupar por módulo o área funcional._
 
 ### Rendimiento y disponibilidad
 
-| ID     | Requisito                                                                                                                                                                          |
-| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID | Requisito |
+|----|-----------|                                       
 | RNF-01 | El sistema deberá procesar la creación de un usuario interno y mostrar el resultado de la operación en un tiempo máximo de 3 segundos bajo condiciones normales de funcionamiento. |
 | RNF-02| El sistema deberá soportar al menos 100 solicitudes simultáneas sin degradar significativamente su funcionamiento.|
+| RNF-03| Las imágenes cargadas al catálogo deberán optimizarse automáticamente para reducir su tamaño sin afectar significativamente su calidad visual.|
 
 ### Seguridad y usabilidad
-
-| ID     | Requisito                                                                                                                                                                             |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RNF-02 | El sistema deberá garantizar que la creación de usuarios internos sea realizada únicamente por usuarios con rol Administrador y que las contraseñas sean almacenadas de forma segura. |
+| ID | Requisito |
+|----|-----------|                                 
+| RNF-04 | El sistema deberá garantizar que la creación de usuarios internos sea realizada únicamente por usuarios con rol Administrador y que las contraseñas sean almacenadas de forma segura. |
+| RNF-05 | El sistema deberá cumplir con la Ley 25.326 de Protección de Datos Personales respecto del almacenamiento, tratamiento, acceso y protección de los datos personales de los clientes. |
