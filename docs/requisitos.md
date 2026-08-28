@@ -94,6 +94,40 @@ _Agrupar por módulo o área funcional._
 | RF-59 | El sistema liberará automáticamente los productos reservados y vaciará el carrito si transcurren más de 24 horas sin finalizar la compra.|
 
 
+### Módulo 6 — Pedidos y Pagos
+
+| ID | Requisito |
+|----|-----------|
+| RF-60 |El sistema exigirá que el cliente esté registrado y autenticado para finalizar una compra. |
+| RF-61 |El sistema solicitará al cliente la confirmación de los datos de entrega durante el proceso de checkout. |
+| RF-62 |El sistema calculará y aplicará automáticamente el costo correspondiente al método de entrega seleccionado.|
+| RF-63 | El sistema no generará costo de envío cuando el cliente seleccione "Retiro en el local".|
+| RF-64 | El sistema permitirá pagar mediante tarjeta de crédito y tarjeta de débito.|
+| RF-65 | El sistema se integrará con la pasarela de pagos Mercado Pago.|
+| RF-66 | El sistema registrará en cada transacción: estado del pago, fecha, importe y medio de pago utilizado.|
+| RF-67 | El sistema notificará al cliente cuando un pago sea rechazado, indicando que puede reintentar.|
+| RF-68 | El sistema mantendrá el pedido en estado "Pendiente de pago" si la transacción queda en estado pendiente.|
+| RF-69 |El sistema confirmará el pedido y descontará el stock cuando el pago sea aprobado. |
+| RF-70 |El sistema generará un número de pedido único al confirmarse la compra. |
+| RF-71 |El pedido generado registrará: productos, variantes, cantidades, precios, datos del cliente, medio de pago, total y método de entrega. |
+| RF-72 | El sistema permitirá al cliente consultar el estado de sus pedidos desde "Mi Cuenta".|
+| RF-73 |El sistema permitirá al cliente cancelar un pedido siempre que no haya sido enviado o retirado. |
+| RF-74 | El sistema generará una nota de crédito cuando un pedido sea cancelado y el pago haya sido aprobado.|
+| RF-75 | El sistema gestionará los siguientes estados de pedido: "Pendiente de pago", "Pago aprobado", "En preparación", "Listo para retirar" / "Enviado", y "Entregado" / "Retirado".|
+| RF-76 | El sistema notificará al cliente mediante email y notificación en su cuenta por cada cambio de estado del pedido.|
+| RF-77 | El sistema permitirá a Ventas actualizar manualmente el estado de un pedido cuando corresponda.|
+| RF-78 | El sistema registrará la fecha y hora de cada cambio de estado del pedido.|
+
+
+
+| RF- | |
+| RF- | |
+| RF- | |
+| RF- | |
+| RF- | |
+| RF- | |
+| RF- | |
+| RF- | |
 | RF- | |
 | RF- | |
 | RF- | |
