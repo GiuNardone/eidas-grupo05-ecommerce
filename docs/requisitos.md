@@ -176,6 +176,20 @@ _Agrupar por módulo o área funcional._
 | RF-117 | El sistema impedirá la aplicación de cupones vencidos o sin usos disponibles. |
 | RF-118 | El sistema permitirá que un cliente aplique un solo cupón por pedido. |
 
+### Módulo 10 — Proveedores
+
+| ID | Requisito |
+|----|-----------|
+| RF-119 | El sistema permitirá registrar proveedores. |
+| RF-120 | El sistema almacenará de cada proveedor los siguientes datos obligatorios: razón social, CUIT, teléfono, email y dirección. |
+| RF-121 | El sistema permitirá modificar los datos de un proveedor existente. |
+| RF-122 | El sistema permitirá eliminar proveedores. |
+| RF-123 | El sistema permitirá asociar cada producto con uno o más proveedores. |
+| RF-124 | El sistema permitirá consultar todos los productos asociados a un proveedor específico. |
+| RF-125 | El sistema permitirá al rol Depósito y Administrador registrar ingresos de mercadería asociados a un proveedor. |
+| RF-126 | El sistema permitirá al Administrador consultar el historial de ingresos de mercadería por proveedor. |
+
+
 
 | RF- | |
 | RF- | |
