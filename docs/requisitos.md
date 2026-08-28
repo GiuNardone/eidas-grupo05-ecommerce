@@ -222,7 +222,7 @@ _Agrupar por módulo o área funcional._
 
 
 
-### Módulo 14 — Panel de Administración
+### Módulo 13 — Panel de Administración
 
 | ID | Requisito |
 |----|-----------|
