@@ -203,17 +203,25 @@ _Agrupar por módulo o área funcional._
 | RF-129 | El sistema mostrará notificaciones en el panel del empleado para: alertas de bajo stock y nuevas solicitudes de devolución.|
 | RF-130 | El sistema registrará el envío de cada notificación con fecha y hora. |
 
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
-| RF- | |
+
+### Módulo 12 — Reportes de Ventas
+
+| ID | Requisito |
+|----|-----------|
+| RF-131 | El sistema permitirá consultar ventas agrupadas por día, semana, mes y año. |
+| RF-132 | El sistema permitirá consultar las ventas de períodos anteriores hasta 5 años atrás. |
+| RF-133 | El sistema permitirá filtrar los reportes de ventas por rango de fechas personalizado. |
+| RF-134 | El sistema permitirá filtrar los reportes de ventas por producto o categoría. |
+| RF-135 | El sistema mostrará el listado de productos más vendidos en un período seleccionado. |
+| RF-136 | El sistema mostrará el listado de productos con menor movimiento en un período seleccionado. |
+| RF-137 | El sistema mostrará el total de ingresos en un período seleccionado. |
+| RF-138 | El sistema mostrará las ventas distinguidas según el medio de pago utilizado. |
+| RF-139 | El sistema mostrará la cantidad de ventas totales en un período seleccionado. |
+| RF-140 | El sistema permitirá exportar todos los reportes en formato Excel. |
+| RF-141 | El sistema permitirá al Administrador programar la generación de reportes periódicos (diarios, semanales, mensuales). |
+
+
+
 
 
 ### Módulo 2 — [Nombre]
