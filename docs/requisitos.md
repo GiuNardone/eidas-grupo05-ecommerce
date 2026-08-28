@@ -155,6 +155,27 @@ _Agrupar por módulo o área funcional._
 | RF-102 | El sistema registrará el ingreso al stock de los productos devueltos cuando la devolución sea aprobada. |
 
 
+### Módulo 9 — Promociones y Cupones
+
+| ID | Requisito |
+|----|-----------|
+| RF-103 | El sistema permitirá crear promociones basadas en descuentos porcentuales. |
+| RF-104 | El sistema permitirá crear promociones basadas en descuentos fijos.|
+| RF-105 | El sistema permitirá aplicar promociones a un producto específico. |
+| RF-106 | El sistema permitirá aplicar promociones a una categoría completa de productos.|
+| RF-107 | El sistema permitirá aplicar promociones a todo el catálogo|
+| RF-108 | El sistema permitirá crear cupones de descuento. |
+| RF-109 | El sistema permitirá configurar en cada cupón una fecha de inicio y una fecha de finalización. |
+| RF-110 | El sistema permitirá configurar en cada promoción una fecha de inicio y una fecha de finalización. |
+| RF-111 | El sistema permitirá configurar cupones como de uso múltiple (varios clientes, varias veces). |
+| RF-112 | El sistema permitirá configurar un límite de usos totales para cupones múltiples. |
+| RF-113 | El sistema activará las promociones y cupones en su fecha de inicio configurada. |
+| RF-114 | El sistema desactivará automáticamente las promociones y cupones en su fecha de finalización configurada. |
+| RF-115 | El sistema permitirá al Administrador activar o desactivar manualmente cualquier promoción o cupón. |
+| RF-116 | El sistema validará que un cupón sea válido (vigente y con usos disponibles) antes de aplicarlo al carrito. |
+| RF-117 | El sistema impedirá la aplicación de cupones vencidos o sin usos disponibles. |
+| RF-118 | El sistema permitirá que un cliente aplique un solo cupón por pedido. |
+
 
 | RF- | |
 | RF- | |
