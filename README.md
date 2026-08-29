@@ -66,6 +66,7 @@ El dueño de la tienda se contactó con el fin de optimizar la gestión operativ
 │   ├── er.puml
 │   └── wireframes/
 └── cuestionario/
+Probando
 ```
 
 ## Instrucciones operativas
