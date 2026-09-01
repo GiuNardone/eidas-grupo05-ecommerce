@@ -57,8 +57,79 @@ para cada una, indiquen qué debería hacer el sistema y quién tendría que dec
 | ¿Qué pasa si el usuario aprieta "Enviar" dos veces? | | |
 | ¿Qué pasa si se cae la conexión justo después de confirmar? | | |
 
+==========================================================
+
+# Slicing — HU-01 Crear usuario interno
+
+## La épica
+
+Como Administrador, quiero crear usuarios internos y asignarles un rol, para permitir que los empleados accedan al sistema según sus responsabilidades.
+
 ---
 
-## Parte C — Defensa
+## Parte A — Historias verticales
 
-_Se hace oral, en el plenario. No se documenta en este archivo._
+### Historia 1 — Crear usuario interno con datos básicos
+
+| Campo    | Detalle                                                                                                                                         |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Historia | Como Administrador, quiero crear un usuario interno ingresando sus datos básicos, para permitir que un nuevo empleado pueda acceder al sistema. |
+
+**Criterios de aceptación**
+
+1. El Administrador debe poder ingresar los datos requeridos para crear el usuario.
+2. El sistema debe validar que los campos obligatorios estén completos.
+3. Al confirmar, el sistema debe registrar el nuevo usuario.
+4. El sistema debe informar que el usuario fue creado correctamente.
+
+### Historia 2 — Crear usuario interno asignando un rol
+
+| Campo    | Detalle                                                                                                                                  |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Historia | Como Administrador, quiero asignar un rol al crear un usuario interno, para definir las responsabilidades que tendrá dentro del sistema. |
+
+**Criterios de aceptación**
+
+1. El Administrador debe poder seleccionar un rol al crear el usuario.
+2. El sistema debe mostrar únicamente los roles predefinidos: Administrador, Ventas, Depósito y Logística.
+3. El usuario debe quedar asociado al rol seleccionado.
+4. El sistema debe informar que el usuario fue creado correctamente con el rol asignado.
+
+### Historia 3 — Validar datos del usuario interno
+
+| Campo    | Detalle                                                                                                                                               |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Historia | Como Administrador, quiero que el sistema valide los datos ingresados al crear un usuario, para evitar registrar información incorrecta o incompleta. |
+
+**Criterios de aceptación**
+
+1. El sistema debe verificar que los campos obligatorios estén completos.
+2. El sistema debe informar qué dato debe corregirse cuando exista un error.
+3. El sistema no debe crear el usuario mientras existan datos inválidos.
+4. Una vez corregidos los datos, el Administrador debe poder continuar con la creación.
+
+### Historia 4 — Evitar usuarios internos duplicados
+
+| Campo    | Detalle                                                                                                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Historia | Como Administrador, quiero que el sistema controle que los datos identificatorios del usuario no estén registrados previamente, para evitar crear usuarios internos duplicados. |
+
+**Criterios de aceptación**
+
+1. El sistema debe verificar si el usuario ya se encuentra registrado.
+2. Si existe un usuario con el mismo dato identificatorio, el sistema debe impedir la creación.
+3. El sistema debe informar al Administrador que el usuario ya se encuentra registrado.
+4. El Administrador debe poder modificar los datos e intentar nuevamente.
+
+### Historia 5 — Confirmar creación del usuario interno
+
+| Campo    | Detalle                                                                                                                                        |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Historia | Como Administrador, quiero recibir una confirmación luego de crear un usuario interno, para saber que el registro fue realizado correctamente. |
+
+**Criterios de aceptación**
+
+1. El sistema debe mostrar un mensaje de confirmación cuando la creación finalice correctamente.
+2. La confirmación debe indicar que el usuario fue creado.
+3. El sistema debe mostrar los datos principales del usuario creado.
+4. El sistema debe mostrar el rol asignado al usuario.
