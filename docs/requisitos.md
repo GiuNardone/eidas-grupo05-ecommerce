@@ -2,11 +2,15 @@
 
 ## Descripción del sistema
 
-_Describir brevemente el sistema, el problema que resuelve y el contexto en el que opera._
+El sistema consiste en una plataforma de comercio electrónico para la tienda de indumentaria Mundo Sport, ubicada en Rosario. Actualmente, el negocio realiza sus ventas de manera presencial y mediante redes sociales, pero no cuenta con un canal de venta online propio. Esta modalidad genera problemas de gestión manual de pedidos, falta de control de stock en tiempo real, dificultades en el seguimiento de ventas y devoluciones, y una experiencia de compra limitada para los clientes. 
+
+La solución plantea digitalizar y centralizar estos procesos, permitiendo administrar la información del negocio desde una única plataforma y mantener actualizado el inventario tanto del local físico como de la tienda online de forma sincronizada, ofreciendo a los clientes un catálogo organizado donde podrán seleccionar los artículos que desean comprar, utilizar un carrito de compras, realizar pagos de forma segura y consultar el estado de sus pedidos. 
+
+Por otro lado, el personal de la tienda contará con un panel administrativo desde el cual podrá gestionar productos, stock, pedidos, ventas y devoluciones. El sistema también contará con autenticación y distintos roles de acceso para el personal. De esta manera, se busca mejorar la organización interna del negocio, garantizando una experiencia ágil tanto para el comprador como para el equipo de trabajo. 
+
 
 ## Requisitos funcionales
 
-_Agrupar por módulo o área funcional._
 
 ### Módulo 1 — Usuarios
 
@@ -242,7 +246,7 @@ _Agrupar por módulo o área funcional._
 
 | ID | Requisito |
 |----|-----------|
-| RF-03 | |
+| RF-03 | | 
 
 
 
@@ -252,14 +256,13 @@ _Agrupar por módulo o área funcional._
 
 ### Rendimiento y disponibilidad
 
-| ID | Requisito |
-|----|-----------|                                       
+| ID     | Requisito                                                                                                                                                                          |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | RNF-01 | El sistema deberá procesar la creación de un usuario interno y mostrar el resultado de la operación en un tiempo máximo de 3 segundos bajo condiciones normales de funcionamiento. |
 | RNF-02| El sistema deberá soportar al menos 100 solicitudes simultáneas sin degradar significativamente su funcionamiento.|
-| RNF-03| Las imágenes cargadas al catálogo deberán optimizarse automáticamente para reducir su tamaño sin afectar significativamente su calidad visual.|
 
 ### Seguridad y usabilidad
-| ID | Requisito |
-|----|-----------|                                 
-| RNF-04 | El sistema deberá garantizar que la creación de usuarios internos sea realizada únicamente por usuarios con rol Administrador y que las contraseñas sean almacenadas de forma segura. |
-| RNF-05 | El sistema deberá cumplir con la Ley 25.326 de Protección de Datos Personales respecto del almacenamiento, tratamiento, acceso y protección de los datos personales de los clientes. |
+
+| ID     | Requisito                                                                                                                                                                             |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF-02 | El sistema deberá garantizar que la creación de usuarios internos sea realizada únicamente por usuarios con rol Administrador y que las contraseñas sean almacenadas de forma segura. |
