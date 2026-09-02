@@ -58,30 +58,30 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 
 
-## HU-03 — [Nombre de la historia]
+## HU-03 — Selección de Variantes, Carrito y Reserva Temporal de Stock
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [rol], quiero [acción], para [objetivo]. |
-| Módulo | |
-| Requisitos relacionados | RF-XX, RF-XX |
+| Historia | Como cliente, quiero agregar, modificar cantidades y eliminar prendas de mi carrito de compras, para revisar los artículos y el monto acumulado antes de confirmar el pedido. |
+| Módulo |05 - Carrito de Compras |
+| Requisitos relacionados | RF-49, RF-50, RF-51, RF-52,RF-53, RF-54, RF-55, RF-56, RF-57, RF-58 |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. Permite incorporar variantes específicas de un artículo al carrito.
+2. Recalcula automáticamente el subtotal e importe total al modificar las unidades.
+3. Conserva los productos añadidos en el carrito  aunque el usuario cierre el navegador o finalice la sesión por un plazo máximo de 24 horas.
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente |Sí |Puede construirse y probarse mediante estados de sesión del navegador antes del pago. |
+| Negociable |Sí |El temporizador visual de reserva y la interfaz de edición del carrito pueden adaptarse. |
+| Valiosa |Sí |Garantiza la disponibilidad de la prenda durante la decisión de compra del cliente. |
+| Estimable |Sí |Corresponde a patrones conocidos de gestión de estado de carrito y tareas programadas. |
+| Pequeña |Sí |Acotada a la administración del carrito y la temporización del stock retenido. |
+| Verificable |Sí |Se verifica editando ítems y comprobando la liberación automática tras 24 horas. |
 
 
 
