@@ -246,97 +246,120 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 | ID | Requisito |
 |----|-----------|
-| RNF-1 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 30 usuarios concurrentes. |
-| RNF-2 | El flujo de checkout y confirmación responderá en ≤ 4 segundos, excluyendo demoras de la pasarela de pago externa. |
-| RNF-3 | Durante promociones especiales (ej. Hot Sale), el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. |
-| RNF-4 | El sistema procesará un mínimo de 15 pedidos por minuto en horas pico sin emitir errores de timeout o pérdida de datos. | 
-| RNF-5 | La arquitectura permitirá ampliar los recursos del servidor (escalado vertical: RAM/CPU) sin requerir reescritura de código. | 
-| RNF-6 | El sistema mantendrá búsquedas y filtrados en ≤ 2 segundos sobre un catálogo proyectado de hasta 5.000 productos activos. | 
+
+| RNF-01 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 100 usuarios concurrentes. |
+
+| RNF-02 | El sistema completará el flujo de checkout en ≤ 4 segundos, sin contar el tiempo de respuesta de la pasarela de pago externa.|
+
+| RNF-03 | Durante promociones especiales, el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. |
+
+| RNF-04 | El sistema procesará un mínimo de 10 pedidos por minuto en horas pico sin emitir errores de timeout o pérdida de datos. | 
+
+| RNF-05 | Las búsquedas y filtros de productos devolverán resultados en ≤ 3 segundos sobre un catálogo proyectado de hasta 300 productos activos. |
+
 
 ### Módulo 2 — Disponibilidad y Confiabilidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-7 | El sitio web mantendrá una disponibilidad del 99.0% mensual en horario comercial, equivalentes a un máximo de 7.2 horas de downtime al mes. |
-| RNF-8 | El sistema mantendrá una disponibilidad del 99.5% durante campañas promocionales (72 horas críticas), equivalentes a un máximo permisible de 21 minutos de caída acumulada. | 
-| RNF-9 | El sistema realizará backups automáticos diarios de la base de datos a las 02:00 hs con retención de 15 días en almacenamiento remoto en la nube. |
-| RNF-10 | El sistema enviará una alerta por e-mail al encargado de sistemas si detecta una caída continua del sitio que supere los 5 minutos. |
-| RNF-11 | Las actualizaciones del sistema se realizarán en horarios de bajo tráfico (madrugada) mediante un modo mantenimiento activo que preserve las sesiones existentes. | 
-| RNF-12 | El sistema conservará los pedidos en estado "Pendiente de pago" ante fallos en la pasarela, permitiendo al cliente reintentar el pago dentro de las 24 horas posteriores. | 
-| RNF-13 | El sistema aplicará bloqueo de transacciones ACID para garantizar la consistencia de stock y evitar sobreventas concurrentes cuando quede 1 sola unidad. |
+| RNF-06 | El sitio web estará disponible al menos el 95% del tiempo en horario comercial (9:00 a 20:00) |
+
+| RNF-07 | Durante campañas promocionales (ej. Hot Sale, Cyber Monday), el sitio estará disponible al menos el 98% del tiempo. |
+
+| RNF-08 | Ante una interrupción temporal del servicio, el sistema deberá mostrar un mensaje informando al usuario que el servicio no se encuentra disponible. |
+
+| RNF-09 | El sistema realizará una copia de seguridad de la base de datos todos los días a las 02:00 AM. |
+
+| RNF-10 | El sistema enviará un correo electrónico al Administrador si el sitio deja de responder por más de 10 minutos. |
+
+| RNF-11 | Las actualizaciones del sistema se realizarán en horario de menor tráfico (02:00 AM a 06:00 AM) y se anunciarán con 48 horas de anticipación. | 
+
 
 ### Módulo 3 — Seguridad y Privacidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-14 | El sistema almacenará contraseñas utilizando el algoritmo bcrypt (factor de costo ≥ 10), nunca en texto plano. |
-| RNF-15 | El sistema cifrará todas las comunicaciones mediante TLS 1.2 o superior (HTTPS obligatorio), redirigiendo automáticamente el tráfico HTTP. |
-| RNF-16 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
-| RNF-17 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | 
-| RNF-18 | El sistema invalidará la sesión de un cliente tras 60 minutos de inactividad. |
-| RNF-19 | El sistema invalidará la sesión de un empleado tras 30 minutos de inactividad. | 
-| RNF-20 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. |
-| RNF-21 | El sistema verificará el rol del usuario en cada petición al servidor (RBAC) para impedir acceso directo por URL a rutas no autorizadas. | 
-| RNF-22 | El sistema cumplirá con la Ley de Protección de Datos Personales (Ley 25.326), permitiendo al cliente solicitar la eliminación de su cuenta o la exportación de sus datos. |
-| RNF-23 | El sistema registrará en un archivo de auditoría cada modificación sobre datos sensibles o pedidos, guardando ID de usuario, fecha, hora e IP. |
-| RNF-24 | El sistema ejecutará transacciones atómicas (ACID) en la base de datos para operaciones compuestas (ej. descontar stock + registrar pedido). | 
+
+| RNF-12 | El sistema debe cumplir estrictamente con la Ley 25.326 de Protección 
+de Datos Personales para el almacenamiento, privacidad y gestión de 
+la información de los clientes. |
+
+| RNF-13 |Todo el tráfico de datos entre el navegador del usuario y el servidor 
+web debe estar cifrado de extremo a extremo utilizando el protocolo 
+HTTPS con un certificado SSL/TLS válido.  |
+
+| RNF-14 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
+
+| RNF-15 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | 
+
+| RNF-16 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. |
+
+| RNF-17 | El panel administrativo debe exigir autenticación mediante contraseñas 
+seguras (mínimo 8 caracteres, alfanuméricas). |
+
+| RNF-18 | El sistema deberá ocultar la contraseña mientras el usuario la ingresa. | 
+
 
 ### Módulo 4 — Usabilidad y Experiencia de Usuario
 
 | ID | Requisito | 
 |----|-----------|
-| RNF-25 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | 
-| RNF-26 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. | 
-| RNF-27 | El sistema mostrará indicadores visuales de carga (spinners) para operaciones que demoren más de 500 ms. | 
-| RNF-28 | El flujo de checkout estará simplificado en un máximo de 4 pantallas/pasos: Carrito → Datos de Envío → Método de Pago → Confirmación. | 
-| RNF-29 | El sistema cumplirá criterios básicos de accesibilidad: navegación completa por teclado y texto alternativo (alt) en imágenes de productos. | 
-| RNF-30 | El buscador ofrecerá sugerencias con latencia ≤ 500 ms al ingresar al menos 3 caracteres en el campo de texto. |
-| RNF-31 | El sistema mantendrá consistencia tipográfica y cromática a través de una guía de estilos/diseño unificada. |
-| RNF-32 | El carrito exhibirá un contador regresivo visible (ej. 15 minutos) para el tiempo de reserva temporal del stock. |
+
+| RNF-19 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | 
+
+| RNF-20 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. |
+
+| RNF-21 | El sistema mostrará un icono de carga en operaciones que demoren más de 1s. | 
+
+| RNF-22 | El flujo de compra completo debe requerir no mas de 4 pasos: Carrito, Datos de Envío, Método de Pago y Confirmación. | 
+
+| RNF-23 | El buscador mostrará sugerencias de productos mientras el usuario escribe, con una demora máxima de 1 segundo. |
+
+| RNF-24 | El panel de administración debe presentar una curva de aprendizaje 
+baja, permitiendo al dueño y empleada usarlo eficazmente mediante 
+una capacitación de 2 horas. |
 
 ### Módulo 5 — Integración y Compatibilidad
 
 | ID | Requisito | 
 |----|-----------|
-| RNF-33 | El sistema se integrará con Mercado Pago mediante sus SDKs oficiales, soportando pagos con tarjeta/transferencia y webhooks de confirmación. |
-| RNF-34 | El sistema permitirá la integración o asignación manual de códigos de seguimiento (tracking ID) de empresas de correo para notificar al cliente por e-mail. |
-| RNF-35 | El sistema expondrá un endpoint API o script de exportación en JSON/CSV para vincular las ventas con el sistema de facturación o planilla administrativa. |
-| RNF-36 | El sitio funcionará correctamente en las últimas dos versiones de los navegadores Chrome, Firefox, Safari y Edge. |
-| RNF-37 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | 
+
+| RNF-25 | El sistema deberá permitir realizar las operaciones principales desde una computadora y desde un dispositivo móvil. |
+
+| RNF-26 | El sistema deberá funcionar correctamente en los navegadores Google Chrome, Mozilla Firefox y Microsoft Edge. |
+
+| RNF-27 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | 
 
 ### Módulo 6 — Base de Datos y Almacenamiento
 
 | ID | Requisito |
 |----|-----------|
-| RNF-38 | La base de datos ejecutará las consultas de catálogo y stock en ≤ 300 ms en condiciones de carga normal. | 
-| RNF-39 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las lecturas. | 
-| RNF-40 | El sistema mantendrá en caché del servidor las consultas de productos más vistos para reducir la carga de la base de datos. | 
-| RNF-41 | Las imágenes subidas por los usuarios se optimizarán a formatos web livianos (ej. WebP/JPEG) con un tamaño máximo de 300 KB por imagen. | 
-| RNF-42 | El sistema mantendrá un historial de hasta 50.000 pedidos pasados garantizando consultas del cliente en ≤ 3 segundos. | 
-| RNF-43 | El sistema registrará los movimientos de stock en una tabla de auditoría dedicada sin pérdida ni sobrescritura de datos. | 
+| RNF-28 | Las consultas a la base de datos para mostrar productos y stock se ejecutarán en menos de 1 segundo. | 
 
-### Módulo 7 — Respaldo y Recuperación ante Desastres
+| RNF-29 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las consultas. | 
+ 
+| RNF-30 | Las imágenes subidas por el Administrador serán comprimidas a un tamaño menor a 300 KB para que el sitio cargue rápido.| 
+
+| RNF-31 | El sistema mantendrá un historial de hasta 10000 pedidos pasados garantizando consultas en ≤ 3 segundos. | 
+
+| RNF-32 | El sistema registrará los movimientos de stock en una tabla de auditoría dedicada sin pérdida ni sobrescritura de datos. | 
+
+### Módulo 7 — Respaldo y Recuperación
 
 | ID | Requisito |
 |----|-----------|
-| RNF-44 | El sistema garantizará un RPO (Pérdida Máxima de Datos) de 24 horas, asegurado mediante el backup diario nocturno. | 
-| RNF-45 | El sistema garantizará un RTO (Tiempo Máximo de Restauración) de 4 horas para levantar la plataforma tras una falla total del servidor. | 
-| RNF-46 | El sistema permitirá restaurar la base de datos desde el backup más reciente en ≤ 1 hora, mediante un procedimiento documentado. | 
-| RNF-47 | El sistema realizará un backup completo semanal de imágenes y archivos del código + backup diario de la base de datos. | 
+| RNF-33 | El sistema realizará una copia de seguridad diaria de la base de datos. 
+| 
+| RNF-34 | El sistema garantizará un tiempo máximo de restauración de 4 horas para levantar la plataforma tras una falla del servidor. | 
+
+| RNF-35 | El Administrador podrá restaurar la base de datos desde el último backup en menos de 1 hora siguiendo una guía escrita. | 
+
+| RNF-36 | El sistema realizará un backup completo semanal de imágenes y archivos del código + backup diario de la base de datos. | 
 
 ### Módulo 8 — Mantenibilidad y Soporte
 
 | ID | Requisito |
 |----|-----------|
-| RNF-48 | El sistema generará logs de errores estructurados que incluyan fecha, hora, nivel de severidad (INFO/WARN/ERROR) y mensaje descriptivo. | 
-| RNF-49 | El proyecto contará con un entorno de pruebas (Staging/Local) aislado del sitio en producción para probar cambios sin riesgo. | 
-| RNF-50 | El código fuente estará bajo control de versiones con Git, permitiendo volver a una versión estable anterior si un despliegue falla. | 
-| RNF-51 | El proyecto dispondrá de un documento técnico de instalación y configuración de la base de datos para facilitar el mantenimiento por otro programador. | 
-| RNF-52 |El sistema enviará un e-mail al administrador técnico ante excepciones no controladas del servidor (Error 500). | Simulación de un error 500 y verificación de recepción del correo de alerta. |
-
-### Módulo 9 — Internacionalización y Expansión (Futuro)
-
-| ID | Requisito |
-|----|-----------|
-| RNF-53 | La estructura del sistema separará los símbolos de moneda en variables de configuración globales para facilitar la adopción de nuevas divisas a futuro. |
-| RNF-54 | Los textos fijos del sistema estarán organizados en archivos de recursos de idioma (i18n), permitiendo agregar la traducción al inglés o portugués sin alterar el código fuente. | 
+| RNF-37 | Cuando ocurra un error en el sistema, se guardará un registro con fecha, hora y descripción del error | 
+ 
+| RNF-38 | El código fuente del proyecto estará versionado en Git, permitiendo volver a una versión anterior si algo falla después de un cambio. | 
