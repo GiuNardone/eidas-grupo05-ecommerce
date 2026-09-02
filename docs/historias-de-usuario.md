@@ -5,31 +5,31 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 ---
-## HU-01 — Crear usuario interno
+## HU-01 — Registro, Autenticación y Gestión de Perfil de Cliente
 
 | Campo                   | Detalle                                                                                                                                                 |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Historia                | Como Administrador, quiero crear usuarios internos y asignarles un rol, para permitir que los empleados accedan al sistema según sus responsabilidades. |
-| Módulo                  | Módulo 1 — Usuarios                                                                                                                                     |
-| Requisitos relacionados | RF-01, RF-03, RF-04                                                                                                                                     |
+| Historia                | Como cliente, quiero registrarme ingresando mis datos obligatorios, iniciar sesión y acceder a mi perfil,  para administrar mi información personal, consultar el historial y estado de mis pedidos y realizar compras en la plataforma. |
+| Módulo                  | 02- Clientes y Cuentas                                                                                                                                     |
+| Requisitos relacionados | RF-08, RF-09, RF-10, RF-11, RF-12, RF-13, RF-14, RF-15, RF-16, RF-17                                                                                                                                     |
 
 ### Criterios de aceptación
 
-1. El Administrador debe poder ingresar los datos necesarios para crear un usuario interno.
-2. El sistema debe permitir seleccionar uno de los roles predefinidos: Administrador, Ventas, Depósito o Logística.
-3. Al confirmar la creación, el sistema debe registrar el nuevo usuario asociado al rol seleccionado.
-4. El sistema debe informar al Administrador si el usuario fue creado correctamente.
+1. El sistema exige todos los campos obligatorios para el alta de usuario, validando el formato del email y DNI e impidiendo el registro si el correo ya existe.
+2. El cliente puede autenticarse con sus credenciales o recuperar la clave mediante un enlace enviado a su correo electrónico en caso de olvido. 
+3. Desde la sección "Mi Cuenta", el cliente autenticado puede consultar y modificar sus datos de contacto (con el DNI bloqueado para edición) y revisar el historial de pedidos.
+
 
 ### Validación INVEST
 
 | Criterio      | ¿Se cumple? | Observación                                                                                   |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------- |
-| Independiente | Sí          | Puede desarrollarse sin depender de las demás historias del módulo.                           |
-| Negociable    | Sí          | Los detalles de los datos y de la interfaz pueden definirse durante el desarrollo.            |
-| Valiosa       | Sí          | Permite incorporar empleados al sistema y asignarles responsabilidades.                       |
-| Estimable     | Sí          | El alcance está definido y permite estimar el esfuerzo necesario.                             |
-| Pequeña       | Sí          | Se limita a la creación del usuario y la asignación de un rol.                                |
-| Verificable   | Sí          | Se puede comprobar que el usuario se crea correctamente y queda asociado al rol seleccionado. |
+| Independiente | Sí          | Se implementa y prueba de forma autónoma sin depender de los módulos de pago o envíos.                           |
+| Negociable    | Sí          | Los datos requeridos en el registro pueden ajustarse.            |
+| Valiosa       | Sí          | Permite personalizar la experiencia y asociar los pedidos a un usuario registrado.                       |
+| Estimable     | Sí          | Representa un flujo de autenticación estándar.                             |
+| Pequeña       | Sí          | Se limita al flujo de alta, acceso y edición de perfil de un cliente.                               |
+| Verificable   | Sí          | Se verifica creando cuentas, iniciando sesión y editando campos. |
 
 ## HU-02 — [Nombre de la historia]
 
