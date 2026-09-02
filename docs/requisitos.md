@@ -246,15 +246,10 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 | ID | Requisito |
 |----|-----------|
-
 | RNF-01 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 100 usuarios concurrentes. |
-
 | RNF-02 | El sistema completará el flujo de checkout en ≤ 4 segundos, sin contar el tiempo de respuesta de la pasarela de pago externa.|
-
 | RNF-03 | Durante promociones especiales, el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. |
-
 | RNF-04 | El sistema procesará un mínimo de 10 pedidos por minuto en horas pico sin emitir errores de timeout o pérdida de datos. | 
-
 | RNF-05 | Las búsquedas y filtros de productos devolverán resultados en ≤ 3 segundos sobre un catálogo proyectado de hasta 300 productos activos. |
 
 
@@ -263,15 +258,10 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 | ID | Requisito |
 |----|-----------|
 | RNF-06 | El sitio web estará disponible al menos el 95% del tiempo en horario comercial (9:00 a 20:00) |
-
 | RNF-07 | Durante campañas promocionales (ej. Hot Sale, Cyber Monday), el sitio estará disponible al menos el 98% del tiempo. |
-
 | RNF-08 | Ante una interrupción temporal del servicio, el sistema deberá mostrar un mensaje informando al usuario que el servicio no se encuentra disponible. |
-
 | RNF-09 | El sistema realizará una copia de seguridad de la base de datos todos los días a las 02:00 AM. |
-
 | RNF-10 | El sistema enviará un correo electrónico al Administrador si el sitio deja de responder por más de 10 minutos. |
-
 | RNF-11 | Las actualizaciones del sistema se realizarán en horario de menor tráfico (02:00 AM a 06:00 AM) y se anunciarán con 48 horas de anticipación. | 
 
 
@@ -279,24 +269,17 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 | ID | Requisito |
 |----|-----------|
-
 | RNF-12 | El sistema debe cumplir estrictamente con la Ley 25.326 de Protección 
 de Datos Personales para el almacenamiento, privacidad y gestión de 
 la información de los clientes. |
-
 | RNF-13 |Todo el tráfico de datos entre el navegador del usuario y el servidor 
 web debe estar cifrado de extremo a extremo utilizando el protocolo 
 HTTPS con un certificado SSL/TLS válido.  |
-
 | RNF-14 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
-
 | RNF-15 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | 
-
 | RNF-16 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. |
-
 | RNF-17 | El panel administrativo debe exigir autenticación mediante contraseñas 
 seguras (mínimo 8 caracteres, alfanuméricas). |
-
 | RNF-18 | El sistema deberá ocultar la contraseña mientras el usuario la ingresa. | 
 
 
@@ -304,17 +287,11 @@ seguras (mínimo 8 caracteres, alfanuméricas). |
 
 | ID | Requisito | 
 |----|-----------|
-
 | RNF-19 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | 
-
 | RNF-20 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. |
-
 | RNF-21 | El sistema mostrará un icono de carga en operaciones que demoren más de 1s. | 
-
 | RNF-22 | El flujo de compra completo debe requerir no mas de 4 pasos: Carrito, Datos de Envío, Método de Pago y Confirmación. | 
-
 | RNF-23 | El buscador mostrará sugerencias de productos mientras el usuario escribe, con una demora máxima de 1 segundo. |
-
 | RNF-24 | El panel de administración debe presentar una curva de aprendizaje 
 baja, permitiendo al dueño y empleada usarlo eficazmente mediante 
 una capacitación de 2 horas. |
@@ -323,11 +300,8 @@ una capacitación de 2 horas. |
 
 | ID | Requisito | 
 |----|-----------|
-
 | RNF-25 | El sistema deberá permitir realizar las operaciones principales desde una computadora y desde un dispositivo móvil. |
-
 | RNF-26 | El sistema deberá funcionar correctamente en los navegadores Google Chrome, Mozilla Firefox y Microsoft Edge. |
-
 | RNF-27 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | 
 
 ### Módulo 6 — Base de Datos y Almacenamiento
@@ -335,25 +309,18 @@ una capacitación de 2 horas. |
 | ID | Requisito |
 |----|-----------|
 | RNF-28 | Las consultas a la base de datos para mostrar productos y stock se ejecutarán en menos de 1 segundo. | 
-
 | RNF-29 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las consultas. | 
- 
 | RNF-30 | Las imágenes subidas por el Administrador serán comprimidas a un tamaño menor a 300 KB para que el sitio cargue rápido.| 
-
 | RNF-31 | El sistema mantendrá un historial de hasta 10000 pedidos pasados garantizando consultas en ≤ 3 segundos. | 
-
 | RNF-32 | El sistema registrará los movimientos de stock en una tabla de auditoría dedicada sin pérdida ni sobrescritura de datos. | 
 
 ### Módulo 7 — Respaldo y Recuperación
 
 | ID | Requisito |
 |----|-----------|
-| RNF-33 | El sistema realizará una copia de seguridad diaria de la base de datos. 
-| 
+| RNF-33 | El sistema realizará una copia de seguridad diaria de la base de datos.|
 | RNF-34 | El sistema garantizará un tiempo máximo de restauración de 4 horas para levantar la plataforma tras una falla del servidor. | 
-
 | RNF-35 | El Administrador podrá restaurar la base de datos desde el último backup en menos de 1 hora siguiendo una guía escrita. | 
-
 | RNF-36 | El sistema realizará un backup completo semanal de imágenes y archivos del código + backup diario de la base de datos. | 
 
 ### Módulo 8 — Mantenibilidad y Soporte
@@ -361,5 +328,4 @@ una capacitación de 2 horas. |
 | ID | Requisito |
 |----|-----------|
 | RNF-37 | Cuando ocurra un error en el sistema, se guardará un registro con fecha, hora y descripción del error | 
- 
-| RNF-38 | El código fuente del proyecto estará versionado en Git, permitiendo volver a una versión anterior si algo falla después de un cambio. | 
+| RNF-38 | El código fuente del proyecto estará versionado en Git, permitiendo volver a una versión anterior si algo falla después de un cambio. |
