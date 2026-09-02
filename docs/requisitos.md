@@ -246,97 +246,97 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-1 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 30 usuarios concurrentes. | Prueba de carga con Apache JMeter o k6. |
-| RNF-2 | El flujo de checkout y confirmación responderá en ≤ 4 segundos, excluyendo demoras de la pasarela de pago externa. | Medición de tiempos en la pestaña Network de las herramientas del desarrollador. |
-| RNF-3 | Durante promociones especiales (ej. Hot Sale), el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. | Prueba de estrés con simulación de tráfico pico simultáneo. |
-| RNF-4 | El sistema procesará un mínimo de 15 pedidos por minuto en horas pico sin emitir errores de timeout o pérdida de datos. | Simulación de compras simultáneas automatizadas. |
-| RNF-5 | La arquitectura permitirá ampliar los recursos del servidor (escalado vertical: RAM/CPU) sin requerir reescritura de código. | Inspección de la arquitectura monolítica modular en servidor VPS/Cloud. |
-| RNF-6 | El sistema mantendrá búsquedas y filtrados en ≤ 2 segundos sobre un catálogo proyectado de hasta 5.000 productos activos. | Consulta de búsqueda cronometrada sobre base de datos cargada. |
+| RNF-1 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 30 usuarios concurrentes. |
+| RNF-2 | El flujo de checkout y confirmación responderá en ≤ 4 segundos, excluyendo demoras de la pasarela de pago externa. |
+| RNF-3 | Durante promociones especiales (ej. Hot Sale), el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. |
+| RNF-4 | El sistema procesará un mínimo de 15 pedidos por minuto en horas pico sin emitir errores de timeout o pérdida de datos. | 
+| RNF-5 | La arquitectura permitirá ampliar los recursos del servidor (escalado vertical: RAM/CPU) sin requerir reescritura de código. | 
+| RNF-6 | El sistema mantendrá búsquedas y filtrados en ≤ 2 segundos sobre un catálogo proyectado de hasta 5.000 productos activos. | 
 
 ### Módulo 2 — Disponibilidad y Confiabilidad
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-7 | El sitio web mantendrá una disponibilidad del 99.0% mensual en horario comercial, equivalentes a un máximo de 7.2 horas de downtime al mes. | Reportes de monitoreo externo (ej. UptimeRobot). |
-| RNF-8 | El sistema mantendrá una disponibilidad del 99.5% durante campañas promocionales (72 horas críticas), equivalentes a un máximo permisible de 21 minutos de caída acumulada. | Registro de disponibilidad durante el evento en la herramienta de monitoreo. |
-| RNF-9 | El sistema realizará backups automáticos diarios de la base de datos a las 02:00 hs con retención de 15 días en almacenamiento remoto en la nube. | Verificación de ejecuciones programadas (cron jobs) y archivos de respaldo generados. |
-| RNF-10 | El sistema enviará una alerta por e-mail al encargado de sistemas si detecta una caída continua del sitio que supere los 5 minutos. | Simulación de caída del servicio y verificación de recepción del correo. |
-| RNF-11 | Las actualizaciones del sistema se realizarán en horarios de bajo tráfico (madrugada) mediante un modo mantenimiento activo que preserve las sesiones existentes. | Prueba de despliegue en ventana nocturna con bandera de mantenimiento habilitada. |
-| RNF-12 | El sistema conservará los pedidos en estado "Pendiente de pago" ante fallos en la pasarela, permitiendo al cliente reintentar el pago dentro de las 24 horas posteriores. | Simulación de fallo en el cobro y comprobación del botón de reintento en el panel del cliente. |
-| RNF-13 | El sistema aplicará bloqueo de transacciones ACID para garantizar la consistencia de stock y evitar sobreventas concurrentes cuando quede 1 sola unidad. | Prueba de concurrencia enviando peticiones de compra idénticas al mismo milisegundo. |
+| RNF-7 | El sitio web mantendrá una disponibilidad del 99.0% mensual en horario comercial, equivalentes a un máximo de 7.2 horas de downtime al mes. |
+| RNF-8 | El sistema mantendrá una disponibilidad del 99.5% durante campañas promocionales (72 horas críticas), equivalentes a un máximo permisible de 21 minutos de caída acumulada. | 
+| RNF-9 | El sistema realizará backups automáticos diarios de la base de datos a las 02:00 hs con retención de 15 días en almacenamiento remoto en la nube. |
+| RNF-10 | El sistema enviará una alerta por e-mail al encargado de sistemas si detecta una caída continua del sitio que supere los 5 minutos. |
+| RNF-11 | Las actualizaciones del sistema se realizarán en horarios de bajo tráfico (madrugada) mediante un modo mantenimiento activo que preserve las sesiones existentes. | 
+| RNF-12 | El sistema conservará los pedidos en estado "Pendiente de pago" ante fallos en la pasarela, permitiendo al cliente reintentar el pago dentro de las 24 horas posteriores. | 
+| RNF-13 | El sistema aplicará bloqueo de transacciones ACID para garantizar la consistencia de stock y evitar sobreventas concurrentes cuando quede 1 sola unidad. |
 
 ### Módulo 3 — Seguridad y Privacidad
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-14 | El sistema almacenará contraseñas utilizando el algoritmo bcrypt (factor de costo ≥ 10), nunca en texto plano. | Inspección directa del campo de contraseñas en la base de datos. |
-| RNF-15 | El sistema cifrará todas las comunicaciones mediante TLS 1.2 o superior (HTTPS obligatorio), redirigiendo automáticamente el tráfico HTTP. | Redirección 301 comprobada en navegador e inspección de certificados SSL. |
-| RNF-16 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. | Prueba de autenticación con credenciales erróneas repetidas. |
-| RNF-17 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | Verificación de bloqueo de cuenta administrativa y recepción del e-mail de alerta. |
-| RNF-18 | El sistema invalidará la sesión de un cliente tras 60 minutos de inactividad. | Prueba de tiempo de inactividad en la sesión del cliente. |
-| RNF-19 | El sistema invalidará la sesión de un empleado tras 30 minutos de inactividad. | Comprobación de redirección al formulario de login tras 30 min sin interacción. |
-| RNF-20 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. | Auditoría de campos en la base de datos y paneles de gestión. |
-| RNF-21 | El sistema verificará el rol del usuario en cada petición al servidor (RBAC) para impedir acceso directo por URL a rutas no autorizadas. | Intento de navegación directa con una cuenta de cliente hacia rutas de administración. |
-| RNF-22 | El sistema cumplirá con la Ley de Protección de Datos Personales (Ley 25.326), permitiendo al cliente solicitar la eliminación de su cuenta o la exportación de sus datos. | Verificación del botón de solicitud de baja y archivo de exportación de datos en "Mi Cuenta". |
-| RNF-23 | El sistema registrará en un archivo de auditoría cada modificación sobre datos sensibles o pedidos, guardando ID de usuario, fecha, hora e IP. | Inspección de archivos .log de auditoría interna tras realizar cambios en el perfil. |
-| RNF-24 | El sistema ejecutará transacciones atómicas (ACID) en la base de datos para operaciones compuestas (ej. descontar stock + registrar pedido). | Inyección de errores forzados a mitad de la transacción para verificar la reversión (rollback). |
+| RNF-14 | El sistema almacenará contraseñas utilizando el algoritmo bcrypt (factor de costo ≥ 10), nunca en texto plano. |
+| RNF-15 | El sistema cifrará todas las comunicaciones mediante TLS 1.2 o superior (HTTPS obligatorio), redirigiendo automáticamente el tráfico HTTP. |
+| RNF-16 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
+| RNF-17 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | 
+| RNF-18 | El sistema invalidará la sesión de un cliente tras 60 minutos de inactividad. |
+| RNF-19 | El sistema invalidará la sesión de un empleado tras 30 minutos de inactividad. | 
+| RNF-20 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. |
+| RNF-21 | El sistema verificará el rol del usuario en cada petición al servidor (RBAC) para impedir acceso directo por URL a rutas no autorizadas. | 
+| RNF-22 | El sistema cumplirá con la Ley de Protección de Datos Personales (Ley 25.326), permitiendo al cliente solicitar la eliminación de su cuenta o la exportación de sus datos. |
+| RNF-23 | El sistema registrará en un archivo de auditoría cada modificación sobre datos sensibles o pedidos, guardando ID de usuario, fecha, hora e IP. |
+| RNF-24 | El sistema ejecutará transacciones atómicas (ACID) en la base de datos para operaciones compuestas (ej. descontar stock + registrar pedido). | 
 
 ### Módulo 4 — Usabilidad y Experiencia de Usuario
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-25 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | Prueba de maquetación en múltiples pantallas con Chrome DevTools. |
-| RNF-26 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. | Ingreso deliberado de datos con formato erróneo en formularios. |
-| RNF-27 | El sistema mostrará indicadores visuales de carga (spinners) para operaciones que demoren más de 500 ms. | Simulación de latencia en la red para validar la aparición del componente visual. |
-| RNF-28 | El flujo de checkout estará simplificado en un máximo de 4 pantallas/pasos: Carrito → Datos de Envío → Método de Pago → Confirmación. | Revisión del mapa del sitio y recorrido de la compra. |
-| RNF-29 | El sistema cumplirá criterios básicos de accesibilidad: navegación completa por teclado y texto alternativo (alt) en imágenes de productos. | Auditoría con herramientas de accesibilidad (ej. Axe DevTools o WAVE). |
-| RNF-30 | El buscador ofrecerá sugerencias con latencia ≤ 500 ms al ingresar al menos 3 caracteres en el campo de texto. | Medición de tiempo de respuesta de la función autocompletar. |
-| RNF-31 | El sistema mantendrá consistencia tipográfica y cromática a través de una guía de estilos/diseño unificada. | Inspección visual de la maquetación en diferentes secciones de la web. |
-| RNF-32 | El carrito exhibirá un contador regresivo visible (ej. 15 minutos) para el tiempo de reserva temporal del stock. | Verificación visual de la cuenta regresiva al agregar un producto al carrito. |
+| RNF-25 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | 
+| RNF-26 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. | 
+| RNF-27 | El sistema mostrará indicadores visuales de carga (spinners) para operaciones que demoren más de 500 ms. | 
+| RNF-28 | El flujo de checkout estará simplificado en un máximo de 4 pantallas/pasos: Carrito → Datos de Envío → Método de Pago → Confirmación. | 
+| RNF-29 | El sistema cumplirá criterios básicos de accesibilidad: navegación completa por teclado y texto alternativo (alt) en imágenes de productos. | 
+| RNF-30 | El buscador ofrecerá sugerencias con latencia ≤ 500 ms al ingresar al menos 3 caracteres en el campo de texto. | M
+| RNF-31 | El sistema mantendrá consistencia tipográfica y cromática a través de una guía de estilos/diseño unificada. |
+| RNF-32 | El carrito exhibirá un contador regresivo visible (ej. 15 minutos) para el tiempo de reserva temporal del stock. |
 
 ### Módulo 5 — Integración y Compatibilidad
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-33 | El sistema se integrará con Mercado Pago mediante sus SDKs oficiales, soportando pagos con tarjeta/transferencia y webhooks de confirmación. | Ejecución de compras de prueba en entorno Sandbox de Mercado Pago. |
-| RNF-34 | El sistema permitirá la integración o asignación manual de códigos de seguimiento (tracking ID) de empresas de correo para notificar al cliente por e-mail. | Registro de un código de envío en el pedido y comprobación de la alerta enviada al cliente. |
-| RNF-35 | El sistema expondrá un endpoint API o script de exportación en JSON/CSV para vincular las ventas con el sistema de facturación o planilla administrativa. | Prueba de descarga/consulta de registros de ventas en formato estructurado. |
-| RNF-36 | El sitio funcionará correctamente en las últimas dos versiones de los navegadores Chrome, Firefox, Safari y Edge. | Pruebas de compatibilidad en múltiples navegadores (Cross-browser testing). |
-| RNF-37 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | Inspección del formato de las peticiones en los registros de integración. |
+| RNF-33 | El sistema se integrará con Mercado Pago mediante sus SDKs oficiales, soportando pagos con tarjeta/transferencia y webhooks de confirmación. |
+| RNF-34 | El sistema permitirá la integración o asignación manual de códigos de seguimiento (tracking ID) de empresas de correo para notificar al cliente por e-mail. | R
+| RNF-35 | El sistema expondrá un endpoint API o script de exportación en JSON/CSV para vincular las ventas con el sistema de facturación o planilla administrativa. |
+| RNF-36 | El sitio funcionará correctamente en las últimas dos versiones de los navegadores Chrome, Firefox, Safari y Edge. |
+| RNF-37 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | 
 
 ### Módulo 6 — Base de Datos y Almacenamiento
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-38 | La base de datos ejecutará las consultas de catálogo y stock en ≤ 300 ms en condiciones de carga normal. | Medición de tiempos de ejecución de las sentencias SQL en el servidor. |
-| RNF-39 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las lecturas. | Inspección de la estructura e índices de las tablas en el gestor de base de datos. |
-| RNF-40 | El sistema mantendrá en caché del servidor las consultas de productos más vistos para reducir la carga de la base de datos. | Verificación del tiempo de respuesta en solicitudes repetidas del mismo producto. |
-| RNF-41 | Las imágenes subidas por los usuarios se optimizarán a formatos web livianos (ej. WebP/JPEG) con un tamaño máximo de 300 KB por imagen. | Carga de imagen pesada y verificación del tamaño resultante almacenado en servidor. |
-| RNF-42 | El sistema mantendrá un historial de hasta 50.000 pedidos pasados garantizando consultas del cliente en ≤ 3 segundos. | Consulta de prueba sobre base de datos poblada con registros históricos. |
-| RNF-43 | El sistema registrará los movimientos de stock en una tabla de auditoría dedicada sin pérdida ni sobrescritura de datos. | Verificación de la tabla de movimientos tras realizar ventas, altas y ajustes manuales. |
+| RNF-38 | La base de datos ejecutará las consultas de catálogo y stock en ≤ 300 ms en condiciones de carga normal. | 
+| RNF-39 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las lecturas. | 
+| RNF-40 | El sistema mantendrá en caché del servidor las consultas de productos más vistos para reducir la carga de la base de datos. | 
+| RNF-41 | Las imágenes subidas por los usuarios se optimizarán a formatos web livianos (ej. WebP/JPEG) con un tamaño máximo de 300 KB por imagen. | 
+| RNF-42 | El sistema mantendrá un historial de hasta 50.000 pedidos pasados garantizando consultas del cliente en ≤ 3 segundos. | 
+| RNF-43 | El sistema registrará los movimientos de stock en una tabla de auditoría dedicada sin pérdida ni sobrescritura de datos. | 
 
 ### Módulo 7 — Respaldo y Recuperación ante Desastres
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-44 | El sistema garantizará un RPO (Pérdida Máxima de Datos) de 24 horas, asegurado mediante el backup diario nocturno. | Comprobación de la hora del último respaldo generado automáticamente. |
-| RNF-45 | El sistema garantizará un RTO (Tiempo Máximo de Restauración) de 4 horas para levantar la plataforma tras una falla total del servidor. | Simulacro de restauración de la base de datos e imágenes en un servidor limpio. |
-| RNF-46 | El sistema permitirá restaurar la base de datos desde el backup más reciente en ≤ 1 hora, mediante un procedimiento documentado. | Cronometrado de la ejecución del script de restauración en entorno local o de pruebas. |
-| RNF-47 | El sistema realizará un backup completo semanal de imágenes y archivos del código + backup diario de la base de datos. | Revisión de las rutinas de respaldos en el servidor y de los archivos almacenados. |
+| RNF-44 | El sistema garantizará un RPO (Pérdida Máxima de Datos) de 24 horas, asegurado mediante el backup diario nocturno. | 
+| RNF-45 | El sistema garantizará un RTO (Tiempo Máximo de Restauración) de 4 horas para levantar la plataforma tras una falla total del servidor. | 
+| RNF-46 | El sistema permitirá restaurar la base de datos desde el backup más reciente en ≤ 1 hora, mediante un procedimiento documentado. | 
+| RNF-47 | El sistema realizará un backup completo semanal de imágenes y archivos del código + backup diario de la base de datos. | 
 
 ### Módulo 8 — Mantenibilidad y Soporte
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-48 | El sistema generará logs de errores estructurados que incluyan fecha, hora, nivel de severidad (INFO/WARN/ERROR) y mensaje descriptivo. | Revisión de la carpeta de logs del sistema tras simular un error de servidor. |
-| RNF-49 | El proyecto contará con un entorno de pruebas (Staging/Local) aislado del sitio en producción para probar cambios sin riesgo. | Verificación de la existencia de un servidor o ambiente de pruebas separado. |
-| RNF-50 | El código fuente estará bajo control de versiones con Git, permitiendo volver a una versión estable anterior si un despliegue falla. | Verificación del repositorio de código Git con su historial de commits. |
-| RNF-51 | El proyecto dispondrá de un documento técnico de instalación y configuración de la base de datos para facilitar el mantenimiento por otro programador. | Revisión del archivo README.md o documentación técnica entregada. |
-| RNF-52 | El sistema enviará un e-mail al administrador técnico ante excepciones no controladas del servidor (Error 500). | Simulación de un error 500 y verificación de recepción del correo de alerta. |
+| RNF-48 | El sistema generará logs de errores estructurados que incluyan fecha, hora, nivel de severidad (INFO/WARN/ERROR) y mensaje descriptivo. | 
+| RNF-49 | El proyecto contará con un entorno de pruebas (Staging/Local) aislado del sitio en producción para probar cambios sin riesgo. | 
+| RNF-50 | El código fuente estará bajo control de versiones con Git, permitiendo volver a una versión estable anterior si un despliegue falla. | 
+| RNF-51 | El proyecto dispondrá de un documento técnico de instalación y configuración de la base de datos para facilitar el mantenimiento por otro programador. | 
+| RNF-52 |
 
 ### Módulo 9 — Internacionalización y Expansión (Futuro)
 
 | ID | Requisito | Método de Verificación |
 |----|-----------|------------------------|
-| RNF-53 | La estructura del sistema separará los símbolos de moneda en variables de configuración globales para facilitar la adopción de nuevas divisas a futuro. | Inspección del archivo de configuración global del sistema (config/app.php o equivalente). |
-| RNF-54 | Los textos fijos del sistema estarán organizados en archivos de recursos de idioma (i18n), permitiendo agregar la traducción al inglés o portugués sin alterar el código fuente. | Inspección de carpetas de idioma (lang/es, lang/en) en el proyecto. |
+| RNF-53 | La estructura del sistema separará los símbolos de moneda en variables de configuración globales para facilitar la adopción de nuevas divisas a futuro. |
+| RNF-54 | Los textos fijos del sistema estarán organizados en archivos de recursos de idioma (i18n), permitiendo agregar la traducción al inglés o portugués sin alterar el código fuente. | 
