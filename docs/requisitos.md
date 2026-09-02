@@ -244,8 +244,8 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 1 — Rendimiento y Escalabilidad
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-1 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 30 usuarios concurrentes. |
 | RNF-2 | El flujo de checkout y confirmación responderá en ≤ 4 segundos, excluyendo demoras de la pasarela de pago externa. |
 | RNF-3 | Durante promociones especiales (ej. Hot Sale), el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. |
@@ -255,8 +255,8 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 2 — Disponibilidad y Confiabilidad
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-7 | El sitio web mantendrá una disponibilidad del 99.0% mensual en horario comercial, equivalentes a un máximo de 7.2 horas de downtime al mes. |
 | RNF-8 | El sistema mantendrá una disponibilidad del 99.5% durante campañas promocionales (72 horas críticas), equivalentes a un máximo permisible de 21 minutos de caída acumulada. | 
 | RNF-9 | El sistema realizará backups automáticos diarios de la base de datos a las 02:00 hs con retención de 15 días en almacenamiento remoto en la nube. |
@@ -267,8 +267,8 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 3 — Seguridad y Privacidad
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-14 | El sistema almacenará contraseñas utilizando el algoritmo bcrypt (factor de costo ≥ 10), nunca en texto plano. |
 | RNF-15 | El sistema cifrará todas las comunicaciones mediante TLS 1.2 o superior (HTTPS obligatorio), redirigiendo automáticamente el tráfico HTTP. |
 | RNF-16 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
@@ -283,31 +283,31 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 4 — Usabilidad y Experiencia de Usuario
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito | 
+|----|-----------|
 | RNF-25 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | 
 | RNF-26 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. | 
 | RNF-27 | El sistema mostrará indicadores visuales de carga (spinners) para operaciones que demoren más de 500 ms. | 
 | RNF-28 | El flujo de checkout estará simplificado en un máximo de 4 pantallas/pasos: Carrito → Datos de Envío → Método de Pago → Confirmación. | 
 | RNF-29 | El sistema cumplirá criterios básicos de accesibilidad: navegación completa por teclado y texto alternativo (alt) en imágenes de productos. | 
-| RNF-30 | El buscador ofrecerá sugerencias con latencia ≤ 500 ms al ingresar al menos 3 caracteres en el campo de texto. | M
+| RNF-30 | El buscador ofrecerá sugerencias con latencia ≤ 500 ms al ingresar al menos 3 caracteres en el campo de texto. |
 | RNF-31 | El sistema mantendrá consistencia tipográfica y cromática a través de una guía de estilos/diseño unificada. |
 | RNF-32 | El carrito exhibirá un contador regresivo visible (ej. 15 minutos) para el tiempo de reserva temporal del stock. |
 
 ### Módulo 5 — Integración y Compatibilidad
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito | 
+|----|-----------|
 | RNF-33 | El sistema se integrará con Mercado Pago mediante sus SDKs oficiales, soportando pagos con tarjeta/transferencia y webhooks de confirmación. |
-| RNF-34 | El sistema permitirá la integración o asignación manual de códigos de seguimiento (tracking ID) de empresas de correo para notificar al cliente por e-mail. | R
+| RNF-34 | El sistema permitirá la integración o asignación manual de códigos de seguimiento (tracking ID) de empresas de correo para notificar al cliente por e-mail. |
 | RNF-35 | El sistema expondrá un endpoint API o script de exportación en JSON/CSV para vincular las ventas con el sistema de facturación o planilla administrativa. |
 | RNF-36 | El sitio funcionará correctamente en las últimas dos versiones de los navegadores Chrome, Firefox, Safari y Edge. |
 | RNF-37 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | 
 
 ### Módulo 6 — Base de Datos y Almacenamiento
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-38 | La base de datos ejecutará las consultas de catálogo y stock en ≤ 300 ms en condiciones de carga normal. | 
 | RNF-39 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las lecturas. | 
 | RNF-40 | El sistema mantendrá en caché del servidor las consultas de productos más vistos para reducir la carga de la base de datos. | 
@@ -317,8 +317,8 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 7 — Respaldo y Recuperación ante Desastres
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-44 | El sistema garantizará un RPO (Pérdida Máxima de Datos) de 24 horas, asegurado mediante el backup diario nocturno. | 
 | RNF-45 | El sistema garantizará un RTO (Tiempo Máximo de Restauración) de 4 horas para levantar la plataforma tras una falla total del servidor. | 
 | RNF-46 | El sistema permitirá restaurar la base de datos desde el backup más reciente en ≤ 1 hora, mediante un procedimiento documentado. | 
@@ -326,8 +326,8 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 8 — Mantenibilidad y Soporte
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-48 | El sistema generará logs de errores estructurados que incluyan fecha, hora, nivel de severidad (INFO/WARN/ERROR) y mensaje descriptivo. | 
 | RNF-49 | El proyecto contará con un entorno de pruebas (Staging/Local) aislado del sitio en producción para probar cambios sin riesgo. | 
 | RNF-50 | El código fuente estará bajo control de versiones con Git, permitiendo volver a una versión estable anterior si un despliegue falla. | 
@@ -336,7 +336,7 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ### Módulo 9 — Internacionalización y Expansión (Futuro)
 
-| ID | Requisito | Método de Verificación |
-|----|-----------|------------------------|
+| ID | Requisito |
+|----|-----------|
 | RNF-53 | La estructura del sistema separará los símbolos de moneda en variables de configuración globales para facilitar la adopción de nuevas divisas a futuro. |
 | RNF-54 | Los textos fijos del sistema estarán organizados en archivos de recursos de idioma (i18n), permitiendo agregar la traducción al inglés o portugués sin alterar el código fuente. | 
