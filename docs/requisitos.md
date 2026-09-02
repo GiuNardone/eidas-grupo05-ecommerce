@@ -269,17 +269,12 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 | ID | Requisito |
 |----|-----------|
-| RNF-12 | El sistema debe cumplir estrictamente con la Ley 25.326 de Protección 
-de Datos Personales para el almacenamiento, privacidad y gestión de 
-la información de los clientes. |
-| RNF-13 |Todo el tráfico de datos entre el navegador del usuario y el servidor 
-web debe estar cifrado de extremo a extremo utilizando el protocolo 
-HTTPS con un certificado SSL/TLS válido.  |
+| RNF-12 | El sistema debe cumplir estrictamente con la Ley 25.326 de Protección de Datos personales para el almacenamiento, privacidad y gestión de la información de los clientes. |
+| RNF-13 |Todo el tráfico de datos entre el navegador del usuario y el servidor web debe estar cifrado de extremo a extremo utilizando el protocolo HTTPS con un certificado SSL/TLS válido.|
 | RNF-14 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
 | RNF-15 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | 
 | RNF-16 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. |
-| RNF-17 | El panel administrativo debe exigir autenticación mediante contraseñas 
-seguras (mínimo 8 caracteres, alfanuméricas). |
+| RNF-17 | El panel administrativo debe exigir autenticación mediante usuario y contraseñas seguras (mínimo 8 caracteres, alfanuméricas). |
 | RNF-18 | El sistema deberá ocultar la contraseña mientras el usuario la ingresa. | 
 
 
@@ -292,9 +287,7 @@ seguras (mínimo 8 caracteres, alfanuméricas). |
 | RNF-21 | El sistema mostrará un icono de carga en operaciones que demoren más de 1s. | 
 | RNF-22 | El flujo de compra completo debe requerir no mas de 4 pasos: Carrito, Datos de Envío, Método de Pago y Confirmación. | 
 | RNF-23 | El buscador mostrará sugerencias de productos mientras el usuario escribe, con una demora máxima de 1 segundo. |
-| RNF-24 | El panel de administración debe presentar una curva de aprendizaje 
-baja, permitiendo al dueño y empleada usarlo eficazmente mediante 
-una capacitación de 2 horas. |
+| RNF-24 | El panel de administración debe presentar una curva de aprendizaje baja, permitiendo al dueño y empleada usarlo eficazmente mediante una capacitación de 2 horas. |
 
 ### Módulo 5 — Integración y Compatibilidad
 
