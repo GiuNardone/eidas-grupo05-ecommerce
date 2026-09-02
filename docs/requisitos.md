@@ -332,7 +332,7 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 | RNF-49 | El proyecto contará con un entorno de pruebas (Staging/Local) aislado del sitio en producción para probar cambios sin riesgo. | 
 | RNF-50 | El código fuente estará bajo control de versiones con Git, permitiendo volver a una versión estable anterior si un despliegue falla. | 
 | RNF-51 | El proyecto dispondrá de un documento técnico de instalación y configuración de la base de datos para facilitar el mantenimiento por otro programador. | 
-| RNF-52 |
+| RNF-52 |El sistema enviará un e-mail al administrador técnico ante excepciones no controladas del servidor (Error 500). | Simulación de un error 500 y verificación de recepción del correo de alerta. |
 
 ### Módulo 9 — Internacionalización y Expansión (Futuro)
 
