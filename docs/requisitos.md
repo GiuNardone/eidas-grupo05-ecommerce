@@ -78,15 +78,14 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 
 ## Requisitos no funcionales
 
-### Módulo 1 — Rendimiento y Escalabilidad
+### Módulo 1 — Rendimiento y Disponibilidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-01 | El sistema responderá en ≤ 2.5 segundos al 90% de las consultas de catálogo, carrito y Mi Cuenta bajo carga normal de hasta 100 usuarios concurrentes. |
-| RNF-02 | El sistema completará el flujo de checkout en ≤ 4 segundos, sin contar el tiempo de respuesta de la pasarela de pago externa.|
-| RNF-03 | Durante promociones especiales, el sistema soportará hasta 200 usuarios concurrentes sin superar los 5 segundos en catálogo ni 8 segundos en checkout. |
-| RNF-04 | El sistema procesará un mínimo de 10 pedidos por minuto en horas pico sin emitir errores de timeout o pérdida de datos. | 
-| RNF-05 | Las búsquedas y filtros de productos devolverán resultados en ≤ 3 segundos sobre un catálogo proyectado de hasta 300 productos activos. |
+| RNF-01 | El sistema responderá a consultas de catálogo, carrito y Mi Cuenta en ≤ 3 segundos al probarse con 50 usuarios simultáneos. |
+| RNF-02 | El sistema completará el flujo de checkout en ≤ 5 segundos, sin contar el tiempo de respuesta de Mercado Pago.|
+| RNF-03 | El sistema procesará al menos 10 pedidos por minuto en horas pico sin errores. |
+| RNF-04 | El sistema deberá permanecer disponible al menos el 95% del tiempo en horario comercial (9:00 a 20:00). | 
 
 
 ### Módulo 2 — Disponibilidad y Confiabilidad
