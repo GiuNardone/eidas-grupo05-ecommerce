@@ -108,47 +108,20 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 | RNF-12 | El sistema funcionará correctamente en los navegadores Chrome, Firefox y Edge.| 
 
 
-### Módulo 4 — Usabilidad y Experiencia de Usuario
+### Módulo 4 — Base de Datos y Almacenamiento
 
 | ID | Requisito | 
 |----|-----------|
-| RNF-19 | El diseño será completamente responsive, adaptándose a resoluciones desde 360px (smartphones) hasta 1920px (escritorio). | 
-| RNF-20 | El sistema mostrará mensajes de error claros e indicativos especificando el campo incorrecto y la solución requerida. |
-| RNF-21 | El sistema mostrará un icono de carga en operaciones que demoren más de 1s. | 
-| RNF-22 | El flujo de compra completo debe requerir no mas de 4 pasos: Carrito, Datos de Envío, Método de Pago y Confirmación. | 
-| RNF-23 | El buscador mostrará sugerencias de productos mientras el usuario escribe, con una demora máxima de 1 segundo. |
-| RNF-24 | El panel de administración debe presentar una curva de aprendizaje baja, permitiendo al dueño y empleada usarlo eficazmente mediante una capacitación de 2 horas. |
+| RNF-13 | Las consultas a la base de datos para mostrar productos y stock se ejecutarán en menos de 2 segundos.| 
+| RNF-14 |Las imágenes subidas por el Administrador serán comprimidas a un tamaño menor a 300 KB.|
+| RNF-15 |El sistema permitirá consultar un historial de al menos 10.000 pedidos, mostrando los resultados en un tiempo máximo de 3 segundos.| 
 
-### Módulo 5 — Integración y Compatibilidad
+### Módulo 5 — Respaldo y Mantenibilidad
 
 | ID | Requisito | 
 |----|-----------|
-| RNF-25 | El sistema deberá permitir realizar las operaciones principales desde una computadora y desde un dispositivo móvil. |
-| RNF-26 | El sistema deberá funcionar correctamente en los navegadores Google Chrome, Mozilla Firefox y Microsoft Edge. |
-| RNF-27 | El sistema utilizará el formato JSON para intercambio de datos en todas las integraciones con servicios externos. | 
+| RNF-16 | El sistema realizará una copia de seguridad de la base de datos al menos una vez por día (02:00am) y una copia de seguridad de las imágenes y del código al menos una vez por semana.|
+| RNF-17 |El código fuente del sistema deberá mantenerse versionado mediante Git.|
+| RNF-18 | Los errores generados por el sistema deberán registrarse indicando como mínimo la fecha, hora y descripción del error.| 
 
-### Módulo 6 — Base de Datos y Almacenamiento
 
-| ID | Requisito |
-|----|-----------|
-| RNF-28 | Las consultas a la base de datos para mostrar productos y stock se ejecutarán en menos de 1 segundo. | 
-| RNF-29 | La base de datos mantendrá índices en las claves primarias y foráneas de productos, stock y pedidos para optimizar las consultas. | 
-| RNF-30 | Las imágenes subidas por el Administrador serán comprimidas a un tamaño menor a 300 KB para que el sitio cargue rápido.| 
-| RNF-31 | El sistema mantendrá un historial de hasta 10000 pedidos pasados garantizando consultas en ≤ 3 segundos. | 
-| RNF-32 | El sistema registrará los movimientos de stock en una tabla de auditoría dedicada sin pérdida ni sobrescritura de datos. | 
-
-### Módulo 7 — Respaldo y Recuperación
-
-| ID | Requisito |
-|----|-----------|
-| RNF-33 | El sistema realizará una copia de seguridad diaria de la base de datos.|
-| RNF-34 | El sistema garantizará un tiempo máximo de restauración de 4 horas para levantar la plataforma tras una falla del servidor. | 
-| RNF-35 | El Administrador podrá restaurar la base de datos desde el último backup en menos de 1 hora siguiendo una guía escrita. | 
-| RNF-36 | El sistema realizará un backup completo semanal de imágenes y archivos del código + backup diario de la base de datos. | 
-
-### Módulo 8 — Mantenibilidad y Soporte
-
-| ID | Requisito |
-|----|-----------|
-| RNF-37 | Cuando ocurra un error en el sistema, se guardará un registro con fecha, hora y descripción del error | 
-| RNF-38 | El código fuente del proyecto estará versionado en Git, permitiendo volver a una versión anterior si algo falla después de un cambio. |
