@@ -88,16 +88,14 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 | RNF-04 | El sistema deberá permanecer disponible al menos el 95% del tiempo en horario comercial (9:00 a 20:00). | 
 
 
-### Módulo 2 — Disponibilidad y Confiabilidad
+### Módulo 2 — Seguridad y Privacidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-06 | El sitio web estará disponible al menos el 95% del tiempo en horario comercial (9:00 a 20:00) |
-| RNF-07 | Durante campañas promocionales (ej. Hot Sale, Cyber Monday), el sitio estará disponible al menos el 98% del tiempo. |
-| RNF-08 | Ante una interrupción temporal del servicio, el sistema deberá mostrar un mensaje informando al usuario que el servicio no se encuentra disponible. |
-| RNF-09 | El sistema realizará una copia de seguridad de la base de datos todos los días a las 02:00 AM. |
-| RNF-10 | El sistema enviará un correo electrónico al Administrador si el sitio deja de responder por más de 10 minutos. |
-| RNF-11 | Las actualizaciones del sistema se realizarán en horario de menor tráfico (02:00 AM a 06:00 AM) y se anunciarán con 48 horas de anticipación. | 
+| RNF-05 | Todo el tráfico de datos entre el navegador del usuario y el servidor web debe estar cifrado de extremo a extremo utilizando el protocolo HTTPS |
+| RNF-06 | El sistema deberá proteger las contraseñas de los usuarios y no almacenarlas en texto visible. |
+| RNF-07 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos de inicio de sesión; y de un empleado por 30 minutos tras 3 intentos fallidos. |
+| RNF-08 | El sistema debe cumplir con la Ley 25.326 de Protección de Datos personales para el almacenamiento, privacidad y gestión de la información de los clientes. |
 
 
 ### Módulo 3 — Seguridad y Privacidad
