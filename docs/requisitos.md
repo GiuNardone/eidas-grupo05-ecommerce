@@ -98,17 +98,14 @@ Por otro lado, el personal de la tienda contará con un panel administrativo des
 | RNF-08 | El sistema debe cumplir con la Ley 25.326 de Protección de Datos personales para el almacenamiento, privacidad y gestión de la información de los clientes. |
 
 
-### Módulo 3 — Seguridad y Privacidad
+### Módulo 3 — Usabilidad y Compatibilidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-12 | El sistema debe cumplir estrictamente con la Ley 25.326 de Protección de Datos personales para el almacenamiento, privacidad y gestión de la información de los clientes. |
-| RNF-13 |Todo el tráfico de datos entre el navegador del usuario y el servidor web debe estar cifrado de extremo a extremo utilizando el protocolo HTTPS con un certificado SSL/TLS válido.|
-| RNF-14 | El sistema bloqueará el acceso de un cliente por 15 minutos tras 5 intentos fallidos consecutivos de inicio de sesión. |
-| RNF-15 | El sistema bloqueará el acceso de un empleado por 30 minutos tras 3 intentos fallidos consecutivos y enviará un e-mail de aviso al Administrador. | 
-| RNF-16 | El sistema nunca almacenará datos sensibles de tarjetas (como el CVV) y mostrará únicamente los últimos 4 dígitos en el panel administrativo. |
-| RNF-17 | El panel administrativo debe exigir autenticación mediante usuario y contraseñas seguras (mínimo 8 caracteres, alfanuméricas). |
-| RNF-18 | El sistema deberá ocultar la contraseña mientras el usuario la ingresa. | 
+| RNF-09 | El diseño será responsive, adaptándose a dispositivos móviles (360px) y de escritorio (1920px).|
+| RNF-10 |El sistema mostrará un mensaje de error cuando un usuario ingrese datos inválidos en un formulario, indicando el campo que contiene el error.|
+| RNF-11 |El sistema mostrará un indicador de carga mientras se ejecuten operaciones que demoren más de 1 segundo. |
+| RNF-12 | El sistema funcionará correctamente en los navegadores Chrome, Firefox y Edge.| 
 
 
 ### Módulo 4 — Usabilidad y Experiencia de Usuario
